@@ -20,6 +20,3 @@ public @interface ClientUpdate {
 	Class<? extends Payload>[] payload() default {};
 
 }
-
-
-
