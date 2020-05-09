@@ -52,7 +52,7 @@ public class Produto implements Serializable {
 	public List<Pedido> getPedidos(){
 		List<Pedido> lista = new ArrayList<>();
 		for (ItemPedido x: items) {
-			lista.add(x.getPEdido());
+			lista.add(x.getPedido());
 		}	
 		return lista;
 	}
