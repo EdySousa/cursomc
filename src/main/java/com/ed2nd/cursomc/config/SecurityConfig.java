@@ -20,6 +20,13 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+	
+	@Bean
+	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+	
+	
 
 	@Autowired
 	private Environment env;
@@ -30,7 +37,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	private static final String[] PUBLIC_MATCHERS_GET = { 
 			"/produtos/**", 
-			"/categorias/**" 
+			"/categorias/**",
+			"/clientes/**"
 	};
 
 	@Override
@@ -56,8 +64,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		return source;
 	}
 	
-	@Bean
-	public BCryptPasswordEncoder bCryptPasswordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
+
 }
